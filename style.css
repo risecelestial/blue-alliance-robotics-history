@@ -482,3 +482,47 @@ img.first-logo {
     display: block;
     flex-shrink: 0;
 }
+
+
+/* Shared styling for Credits, Contact, and Link Tree pages */
+.info-page {
+    padding-top: 10px;
+}
+
+.info-card {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px;
+    background: #eeeeee;
+    border: 2px solid #bcbcbc;
+    border-radius: 16px;
+    line-height: 1.7;
+}
+
+.info-card h2 {
+    font-family: Georgia, serif;
+}
+
+.info-card a {
+    color: #174b92;
+}
+
+.info-card a:hover {
+    text-decoration: underline;
+}
+
+/* Keep the logo correctly sized on every page */
+img.first-logo {
+    width: 90px;
+    height: 70px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
+@media (max-width: 550px) {
+    .info-card {
+        padding: 18px;
+    }
+}
+

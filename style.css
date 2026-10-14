@@ -467,17 +467,16 @@ main {
         gap: 8px;
     }
 
-    
+
+    .bottom-footer a {
+        font-size: 13px;
+    }
+}
+
 img.first-logo {
     width: 90px;
     height: 70px;
     object-fit: contain;
     display: block;
     flex-shrink: 0;
-}
-
-
-    .bottom-footer a {
-        font-size: 13px;
-    }
 }

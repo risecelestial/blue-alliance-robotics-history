@@ -1,113 +1,101 @@
 
-/* Sample timeline events */
 const events = [
     {
-        year: "1989",
-        title: "Robotics Beginnings",
-        description: "An example event about the beginnings of robotics."
+        title: "Content",
+        description: "Timeline event 1: Add a researched historical event here."
     },
     {
-        year: "1992",
-        title: "Early Competitions",
-        description: "An example event about early robotics competitions."
+        title: "Content",
+        description: "Timeline event 2: Add a researched historical event here."
     },
     {
-        year: "2000",
-        title: "Growing Teams",
-        description: "An example event about the growth of robotics teams."
+        title: "Content",
+        description: "Timeline event 3: Add a researched historical event here."
     },
     {
-        year: "2005",
-        title: "New Challenges",
-        description: "An example event about new robotics challenges."
+        title: "Content",
+        description: "Timeline event 4: Add a researched historical event here."
     },
     {
-        year: "2010",
-        title: "Robotics Today",
-        description: "An example event about modern robotics."
+        title: "Content",
+        description: "Timeline event 5: Add a researched historical event here."
     }
 ];
 
-/* Sample team information */
 const teams = [
     {
-        name: "Example Robotics Team",
+        name: "Team Name: To be researched",
         number: "To be researched",
-        location: "To be researched",
         year: "To be researched",
-        description: "Team history will be added here."
+        description: "Team history will be added here.",
+        history: "Historical match data: To be researched."
     },
     {
-        name: "Another Robotics Team",
+        name: "Another Team: To be researched",
         number: "To be researched",
-        location: "To be researched",
         year: "To be researched",
-        description: "Competition achievements will be added here."
+        description: "Add this team's description here.",
+        history: "Historical match data: To be researched."
     }
 ];
 
-/* Find the HTML elements we need */
 const timeline = document.getElementById("timeline");
-const teamList = document.getElementById("team-list");
-
 const timelinePage = document.getElementById("timeline-page");
 const teamsPage = document.getElementById("teams-page");
 
 const timelineButton = document.getElementById("timeline-button");
 const teamsButton = document.getElementById("teams-button");
 
-/* Add timeline events to the page */
+const teamInformation = document.getElementById("team-information");
+const teamImage = document.getElementById("team-image");
+
+let currentTeam = 0;
+
+/* Build the alternating timeline */
 events.forEach(function(event, index) {
-    const eventBox = document.createElement("div");
-    eventBox.className =
-        "timeline-event " + (index % 2 === 0 ? "left" : "right");
+    const eventRow = document.createElement("div");
+
+    eventRow.className = "timeline-event " +
+        (index % 2 === 0 ? "left" : "right");
 
     const card = document.createElement("button");
-    card.className = "event-card";
     card.type = "button";
-    card.textContent = event.year + " — " + event.title;
+    card.className = "event-card";
+    card.textContent = event.title;
+    card.setAttribute("aria-label", event.description);
 
     card.addEventListener("click", function() {
         alert(event.description);
     });
 
-    eventBox.appendChild(card);
-    timeline.appendChild(eventBox);
+    eventRow.appendChild(card);
+    timeline.appendChild(eventRow);
 });
 
-/* Add team cards to the page */
-teams.forEach(function(team) {
-    const card = document.createElement("article");
-    card.className = "team-card";
+/* Display the selected team's information */
+function showTeam() {
+    const team = teams[currentTeam];
 
-    const placeholder = document.createElement("div");
-    placeholder.className = "team-placeholder";
-    placeholder.textContent = team.name;
+    teamImage.textContent = "Robot/Team Image Collage";
 
-    const details = document.createElement("div");
-    details.className = "team-details";
+    teamInformation.replaceChildren();
 
-    const heading = document.createElement("h2");
-    heading.textContent = team.name;
+    const fields = [
+        team.name,
+        "Team Number: " + team.number,
+        "Rookie Year: " + team.year,
+        "Description: " + team.description,
+        team.history
+    ];
 
-    const number = document.createElement("p");
-    number.textContent = "Team number: " + team.number;
+    fields.forEach(function(text) {
+        const paragraph = document.createElement("p");
+        paragraph.textContent = text;
+        teamInformation.appendChild(paragraph);
+    });
+}
 
-    const location = document.createElement("p");
-    location.textContent = "Location: " + team.location;
-
-    const year = document.createElement("p");
-    year.textContent = "Year founded: " + team.year;
-
-    const description = document.createElement("p");
-    description.textContent = team.description;
-
-    details.append(heading, number, location, year, description);
-    card.append(placeholder, details);
-    teamList.appendChild(card);
-});
-
-/* Show the timeline page */
+/* Change between pages */
 timelineButton.addEventListener("click", function() {
     timelinePage.hidden = false;
     teamsPage.hidden = true;
@@ -116,13 +104,26 @@ timelineButton.addEventListener("click", function() {
     teamsButton.classList.remove("active");
 });
 
-/* Show the teams page */
 teamsButton.addEventListener("click", function() {
     timelinePage.hidden = true;
     teamsPage.hidden = false;
 
-    teamsButton.classList.add("active");
+    teamsButton.classList.remove("active");
     timelineButton.classList.remove("active");
+    teamsButton.classList.add("active");
+
+    showTeam();
 });
 
-console.log("Robotics History website loaded!");
+/* Previous and next team buttons */
+document.getElementById("previous-team").addEventListener("click", function() {
+    currentTeam = (currentTeam - 1 + teams.length) % teams.length;
+    showTeam();
+});
+
+document.getElementById("next-team").addEventListener("click", function() {
+    currentTeam = (currentTeam + 1) % teams.length;
+    showTeam();
+});
+
+console.log("Community Archives loaded.");

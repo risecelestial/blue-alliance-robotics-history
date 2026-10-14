@@ -9,64 +9,82 @@
 </head>
 <body>
 
-    <header class="top-bar">
-        <a class="brand" href="#" aria-label="Community Archives home">
-            <span class="first-logo" aria-label="FIRST logo placeholder">
-                <span class="logo-mark">A</span>
+    <!-- STATIONARY TOP HEADER -->
+    <header class="top-header">
+        <div class="brand">
+            <div class="first-logo" aria-label="FIRST logo placeholder">
+                <span class="logo-symbol">F</span>
                 <span class="logo-caption">FIRST</span>
-            </span>
-            <span class="brand-name">Community Archives</span>
-        </a>
+            </div>
+
+            <span class="brand-title">Community Archives</span>
+        </div>
 
         <nav aria-label="Main navigation">
             <button id="timeline-button" class="nav-button active">
                 Timeline
             </button>
+
             <button id="teams-button" class="nav-button">
                 Original Teams
             </button>
         </nav>
     </header>
 
+    <!-- PAGE CONTENT -->
     <main>
-        <!-- TIMELINE PAGE -->
-        <section id="timeline-page">
+        <!-- TIMELINE -->
+        <section id="timeline-page" class="page">
             <h1 class="page-title">Timeline</h1>
 
-            <div class="timeline" id="timeline">
-                <!-- JavaScript creates the timeline boxes -->
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div id="timeline-events"></div>
             </div>
         </section>
 
-        <!-- ORIGINAL TEAMS PAGE -->
-        <section id="teams-page" hidden>
+        <!-- ORIGINAL AND SUSTAINING TEAMS -->
+        <section id="teams-page" class="page" hidden>
             <h1 class="page-title">Original and Sustaining Teams</h1>
 
             <div class="team-panel">
-                <div class="team-image-area">
-                    <div class="team-image" id="team-image">
-                        Robot/Team Image Collage
+
+                <!-- IMAGE COLLAGE / CAROUSEL -->
+                <div class="collage-column">
+                    <div class="collage-window">
+                        <div id="collage-track" class="collage-track">
+                            <!-- JavaScript inserts the images here -->
+                        </div>
                     </div>
 
-                    <button class="image-arrow arrow-left"
-                        id="previous-team" aria-label="Previous team">
+                    <button
+                        id="previous-team"
+                        class="carousel-arrow previous"
+                        aria-label="Previous team">
                         ◀
                     </button>
 
-                    <button class="image-arrow arrow-right"
-                        id="next-team" aria-label="Next team">
+                    <button
+                        id="next-team"
+                        class="carousel-arrow next"
+                        aria-label="Next team">
                         ▶
                     </button>
                 </div>
 
-                <div class="team-information" id="team-information">
-                    <!-- JavaScript adds team information here -->
-                </div>
+                <!-- TEAM INFORMATION -->
+                <article id="team-information" class="team-information">
+                    <!-- JavaScript updates this with the selected team -->
+                </article>
+
             </div>
+
+            <p class="team-counter" id="team-counter"></p>
         </section>
     </main>
 
-    <footer class="bottom-bar">
+    <!-- STATIONARY BOTTOM HEADER / FOOTER -->
+    <footer class="bottom-footer">
         <a href="#credits">Credits</a>
         <a href="#contact">Contact</a>
         <a href="#link-tree">Link Tree</a>

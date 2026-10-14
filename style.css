@@ -121,20 +121,22 @@ nav {
    MAIN PAGE
    ========================= */
 
+
 main {
     width: 100%;
     max-width: 1000px;
     min-height: calc(100vh - 130px);
     margin: 0 auto;
-    padding: 5px 20px 20px;
+    padding: 30px 20px 20px;
 }
+
 
 .page[hidden] {
     display: none !important;
 }
 
 .page-title {
-    margin: 10px 0 12px;
+    margin: 20px 0 28px;
     text-align: center;
     font-family: Georgia, serif;
     font-size: 18px;
@@ -441,7 +443,7 @@ main {
     }
 
     main {
-        padding: 8px 10px 20px;
+       padding: 25px 10px 20px;
     }
 
     .timeline {

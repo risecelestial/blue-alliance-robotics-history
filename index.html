@@ -4,24 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Blue Alliance Robotics History</title>
-
+    <title>Community Archives</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <header class="site-header">
-        <a class="brand" href="index.html" aria-label="Community Archives home">
-            <span class="brand-icon" aria-hidden="true">🤖</span>
-            <span>Community Archives</span>
+
+    <header class="top-bar">
+        <a class="brand" href="#" aria-label="Community Archives home">
+            <span class="first-logo" aria-label="FIRST logo placeholder">
+                <span class="logo-mark">A</span>
+                <span class="logo-caption">FIRST</span>
+            </span>
+            <span class="brand-name">Community Archives</span>
         </a>
 
         <nav aria-label="Main navigation">
             <button id="timeline-button" class="nav-button active">
                 Timeline
             </button>
-
             <button id="teams-button" class="nav-button">
                 Original Teams
             </button>
@@ -29,34 +29,44 @@
     </header>
 
     <main>
-        <!-- Timeline page -->
-        <section id="timeline-page" class="page-section">
-            <h1>Timeline</h1>
+        <!-- TIMELINE PAGE -->
+        <section id="timeline-page">
+            <h1 class="page-title">Timeline</h1>
 
-            <p class="intro">
-                Explore important moments in robotics history.
-            </p>
-
-            <div id="timeline" class="timeline">
-                <!-- JavaScript will add timeline events here. -->
+            <div class="timeline" id="timeline">
+                <!-- JavaScript creates the timeline boxes -->
             </div>
         </section>
 
-        <!-- Team information page -->
-        <section id="teams-page" class="page-section" hidden>
-            <h1>Original and Sustaining Teams</h1>
+        <!-- ORIGINAL TEAMS PAGE -->
+        <section id="teams-page" hidden>
+            <h1 class="page-title">Original and Sustaining Teams</h1>
 
-            <p class="intro">
-                Discover the teams that helped shape competitive robotics.
-            </p>
+            <div class="team-panel">
+                <div class="team-image-area">
+                    <div class="team-image" id="team-image">
+                        Robot/Team Image Collage
+                    </div>
 
-            <div id="team-list" class="team-list">
-                <!-- JavaScript will add team cards here. -->
+                    <button class="image-arrow arrow-left"
+                        id="previous-team" aria-label="Previous team">
+                        ◀
+                    </button>
+
+                    <button class="image-arrow arrow-right"
+                        id="next-team" aria-label="Next team">
+                        ▶
+                    </button>
+                </div>
+
+                <div class="team-information" id="team-information">
+                    <!-- JavaScript adds team information here -->
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="bottom-bar">
         <a href="#credits">Credits</a>
         <a href="#contact">Contact</a>
         <a href="#link-tree">Link Tree</a>

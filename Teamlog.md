@@ -16,4 +16,26 @@
   - Eric has offered a project about the FIRST Robotics Original Sustaining Team
   - Anji will think about it for a few hours then decide on a project
 * **Handoff package:** 
+  
+
+
+
+  ## 2026-10-15: Day 3 Workshop:
+* **Present:** Anji, Eric
+* **Scribe:** Rohanji
+* **Standup**
+  - Anji: Completed HTML & CSS Requirements for website
+  - Eric: 
+* **Plan**
+  - *Goals for today:*
   - 
+  - Anji: Keep on learning 
+  - Eric: Eric will work on JavaScript
+* **Build**
+  - *Learned:* 
+  - Front end webpage with no javascript
+* **Review**
+  - Reviewed website and confirmed what parameters have been met and what needs to be worked on
+  - Determined work responsibilities for remaining parts 
+* **Handoff package:** 
+  - Front end webpage with no javascript handed off to Eric

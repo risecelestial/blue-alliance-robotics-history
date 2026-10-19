@@ -24,11 +24,11 @@
         </div>
 
         <nav aria-label="Main navigation">
-            <button id="timeline-button" class="nav-button active">
+            <button id="timeline-button" class="nav-button active" aria-pressed="true">
                 Timeline
             </button>
 
-            <button id="teams-button" class="nav-button">
+            <button id="teams-button" class="nav-button" aria-pressed="false">
                 Original Teams
             </button>
         </nav>
@@ -44,42 +44,57 @@
                 <div class="timeline-line"></div>
                 <div id="timeline-events"></div>
             </div>
+            <div class="timeline-scroll-spacer" aria-hidden="true"></div>
         </section>
 
         <!-- ORIGINAL AND SUSTAINING TEAMS -->
         <section id="teams-page" class="page" hidden>
             <h1 class="page-title">Original and Sustaining Teams</h1>
 
-            <div class="team-panel">
+            <div class="team-carousel">
+                <button
+                    id="previous-team"
+                    class="team-arrow previous"
+                    aria-label="Previous team">
+                    ◀
+                </button>
 
                 <!-- IMAGE COLLAGE / CAROUSEL -->
-                <div class="collage-column">
-                    <div class="collage-window">
-                        <div id="collage-track" class="collage-track">
-                            <!-- JavaScript inserts the images here -->
+                <div class="team-panel">
+                    <div class="collage-column">
+                        <div class="collage-window">
+                            <div id="collage-track" class="collage-track">
+                                <!-- JavaScript inserts the images here -->
+                            </div>
                         </div>
+
+                        <button
+                            id="previous-image"
+                            class="carousel-arrow previous"
+                            aria-label="Previous team image">
+                            ◀
+                        </button>
+
+                        <button
+                            id="next-image"
+                            class="carousel-arrow next"
+                            aria-label="Next team image">
+                            ▶
+                        </button>
                     </div>
 
-                    <button
-                        id="previous-team"
-                        class="carousel-arrow previous"
-                        aria-label="Previous team">
-                        ◀
-                    </button>
-
-                    <button
-                        id="next-team"
-                        class="carousel-arrow next"
-                        aria-label="Next team">
-                        ▶
-                    </button>
+                    <!-- TEAM INFORMATION -->
+                    <article id="team-information" class="team-information">
+                        <!-- JavaScript updates this with the selected team -->
+                    </article>
                 </div>
 
-                <!-- TEAM INFORMATION -->
-                <article id="team-information" class="team-information">
-                    <!-- JavaScript updates this with the selected team -->
-                </article>
-
+                <button
+                    id="next-team"
+                    class="team-arrow next"
+                    aria-label="Next team">
+                    ▶
+                </button>
             </div>
 
             <p class="team-counter" id="team-counter"></p>
@@ -87,12 +102,25 @@
     </main>
 
     <!-- STATIONARY BOTTOM HEADER / FOOTER -->
-    
-<footer class="bottom-footer">
-    <a href="credits.html">Credits</a>
-    <a href="contact.html">Contact</a>
-    <a href="link-tree.html">Link Tree</a>
-</footer>
+    <footer class="bottom-footer">
+        <section class="footer-section">
+            <h2>Credits</h2>
+            <p>Project Creators: Rohanji Novas, Eric Edwards.</p>
+            <p>Project Continuers: First Last, First Last.</p>
+        </section>
+        <section class="footer-section">
+            <h2>Contact</h2>
+            <p>Questions? Contact Eric at <a href="mailto:eedward3@student.fitchburgstate.edu">eedward3@student.fitchburgstate.edu</a>.</p>
+            <p>Or contact Anji at <a href="mailto:rnovas@fitchburgstate.edu">rnovas@fitchburgstate.edu</a>.</p>
+        </section>
+        <section class="footer-section">
+            <h2>Link Tree</h2>
+            <ul>
+                <li><a href="https://www.thebluealliance.com/" target="_blank" rel="noopener noreferrer">The Blue Alliance</a></li>
+                <li><a href="https://www.firstinspires.org/" target="_blank" rel="noopener noreferrer">FIRST Robotics</a></li>
+            </ul>
+        </section>
+    </footer>
 
 
     <script src="script.js"></script>

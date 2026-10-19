@@ -58,6 +58,15 @@ const teamInformation = document.getElementById("team-information");
 const teamCounter = document.getElementById("team-counter");
 
 let currentTeam = 0;
+let currentImages = teams.map(function() {
+    return 0;
+});
+let imageInteractions = teams.map(function() {
+    return null;
+});
+let collageTimer = null;
+
+const autoplayDelay = 10000;
 
 /* CREATE THE TIMELINE */
 
@@ -67,6 +76,7 @@ events.forEach(function(event, index) {
     row.className =
         "timeline-event " +
         (index % 2 === 0 ? "left" : "right");
+    row.dataset.eventIndex = index;
 
     const card = document.createElement("button");
 
@@ -86,6 +96,62 @@ events.forEach(function(event, index) {
     timelineEvents.appendChild(row);
 });
 
+/* KEEP THE CURRENT TIMELINE EVENT AND ITS NEIGHBORS VISIBLE */
+
+function updateVisibleTimelineEvents() {
+    const rows = Array.from(
+        timelineEvents.querySelectorAll(".timeline-event")
+    );
+
+    if (rows.length === 0 || timelinePage.hidden) {
+        return;
+    }
+
+    const viewportCenter = window.innerHeight / 2;
+    let currentIndex = 0;
+    let closestDistance = Infinity;
+
+    rows.forEach(function(row, index) {
+        const bounds = row.getBoundingClientRect();
+        const rowCenter = bounds.top + bounds.height / 2;
+        const distance = Math.abs(rowCenter - viewportCenter);
+
+        if (distance < closestDistance) {
+            closestDistance = distance;
+            currentIndex = index;
+        }
+    });
+
+    rows.forEach(function(row, index) {
+        const isVisible = Math.abs(index - currentIndex) <= 1;
+        const card = row.querySelector(".event-card");
+
+        row.classList.toggle(
+            "is-visible",
+            isVisible
+        );
+        card.tabIndex = isVisible ? 0 : -1;
+        card.setAttribute("aria-hidden", String(!isVisible));
+    });
+}
+
+let timelineUpdateRequested = false;
+
+function requestTimelineUpdate() {
+    if (timelineUpdateRequested) {
+        return;
+    }
+
+    timelineUpdateRequested = true;
+    window.requestAnimationFrame(function() {
+        timelineUpdateRequested = false;
+        updateVisibleTimelineEvents();
+    });
+}
+
+window.addEventListener("scroll", requestTimelineUpdate, { passive: true });
+window.addEventListener("resize", requestTimelineUpdate);
+
 /* CREATE THE TEAM IMAGE COLLAGE */
 
 function createCollage(team) {
@@ -101,6 +167,7 @@ function createCollage(team) {
 
         slide.appendChild(placeholder);
         collageTrack.appendChild(slide);
+        updateImageControls(team);
         return;
     }
 
@@ -115,6 +182,73 @@ function createCollage(team) {
         slide.appendChild(image);
         collageTrack.appendChild(slide);
     });
+
+    updateCollagePosition(team);
+    updateImageControls(team);
+}
+
+function updateCollagePosition(team) {
+    const imageIndex = currentImages[currentTeam];
+    collageTrack.style.transform =
+        "translateX(-" + imageIndex * 100 + "%)";
+    updateImageControls(team);
+}
+
+function updateImageControls(team) {
+    const hasMultipleImages = team.images.length > 1;
+    document.getElementById("previous-image").disabled = !hasMultipleImages;
+    document.getElementById("next-image").disabled = !hasMultipleImages;
+}
+
+function showNextImage() {
+    const team = teams[currentTeam];
+
+    if (team.images.length < 2) {
+        return;
+    }
+
+    currentImages[currentTeam] =
+        (currentImages[currentTeam] + 1) % team.images.length;
+    updateCollagePosition(team);
+}
+
+function scheduleCollageAdvance() {
+    window.clearTimeout(collageTimer);
+
+    const scheduledTeam = currentTeam;
+    const team = teams[scheduledTeam];
+    if (team.images.length < 2 || teamsPage.hidden) {
+        return;
+    }
+
+    const lastInteraction = imageInteractions[scheduledTeam];
+    const delay = lastInteraction === null
+        ? autoplayDelay
+        : Math.max(0, lastInteraction + autoplayDelay - Date.now());
+
+    collageTimer = window.setTimeout(function() {
+        if (teamsPage.hidden || currentTeam !== scheduledTeam) {
+            return;
+        }
+
+        showNextImage();
+        imageInteractions[scheduledTeam] = null;
+        scheduleCollageAdvance();
+    }, delay);
+}
+
+function navigateImage(direction) {
+    const team = teams[currentTeam];
+    if (team.images.length < 2) {
+        return;
+    }
+
+    currentImages[currentTeam] =
+        (currentImages[currentTeam] + direction + team.images.length) %
+        team.images.length;
+    imageInteractions[currentTeam] = Date.now();
+    updateCollagePosition(team);
+    scheduleCollageAdvance();
 }
 
 /* SHOW THE SELECTED TEAM AND ITS IMAGES */
@@ -145,16 +279,22 @@ function showTeam() {
 
     teamCounter.textContent =
         "Team " + (currentTeam + 1) + " of " + teams.length;
+
+    scheduleCollageAdvance();
 }
 
 /* NAVIGATION: TIMELINE */
 
 timelineButton.addEventListener("click", function() {
+    window.clearTimeout(collageTimer);
     timelinePage.hidden = false;
     teamsPage.hidden = true;
+    requestTimelineUpdate();
 
     timelineButton.classList.add("active");
     teamsButton.classList.remove("active");
+    timelineButton.setAttribute("aria-pressed", "true");
+    teamsButton.setAttribute("aria-pressed", "false");
 });
 
 /* NAVIGATION: ORIGINAL TEAMS */
@@ -165,6 +305,8 @@ teamsButton.addEventListener("click", function() {
 
     teamsButton.classList.add("active");
     timelineButton.classList.remove("active");
+    teamsButton.setAttribute("aria-pressed", "true");
+    timelineButton.setAttribute("aria-pressed", "false");
 
     showTeam();
 });
@@ -182,5 +324,15 @@ document.getElementById("previous-team").addEventListener("click", function() {
     currentTeam = (currentTeam - 1 + teams.length) % teams.length;
     showTeam();
 });
+
+document.getElementById("previous-image").addEventListener("click", function() {
+    navigateImage(-1);
+});
+
+document.getElementById("next-image").addEventListener("click", function() {
+    navigateImage(1);
+});
+
+requestTimelineUpdate();
 
 console.log("Community Archives website is ready.");

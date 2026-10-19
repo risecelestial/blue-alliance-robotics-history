@@ -289,7 +289,7 @@ timelineButton.addEventListener("click", function() {
     window.clearTimeout(collageTimer);
     timelinePage.hidden = false;
     teamsPage.hidden = true;
-    requestTimelineUpdate();
+    updateVisibleTimelineEvents();
 
     timelineButton.classList.add("active");
     teamsButton.classList.remove("active");
@@ -333,6 +333,6 @@ document.getElementById("next-image").addEventListener("click", function() {
     navigateImage(1);
 });
 
-requestTimelineUpdate();
+updateVisibleTimelineEvents();
 
 console.log("Community Archives website is ready.");

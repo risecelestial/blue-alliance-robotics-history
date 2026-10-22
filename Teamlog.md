@@ -39,3 +39,18 @@
   - Determined work responsibilities for remaining parts 
 * **Handoff package:** 
   - Front end webpage with no javascript handed off to Eric
+
+    ## 2026-10-15: Day 4 Workshop:
+* **Present:** Anji, Eric
+* **Scribe:** Eric
+* **Standup**
+  - Anji & Eric: Nothing to report
+* **Plan**
+  - *Goals for today:*
+  - Anji:  Work on handoff guide, start working on Milestone 3
+  - Eric:  Work on handoff guide, improve website and add content for better viewing experience
+* **Build**
+  - Got half of the handoff guide done
+  - Content written in google doc, ready to be populated on webpage
+* **Review**
+  - Progress is being made, no substantial reviews needed just yet.

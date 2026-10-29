@@ -54,3 +54,22 @@
   - Content written in google doc, ready to be populated on webpage
 * **Review**
   - Progress is being made, no substantial reviews needed just yet.
+ 
+
+   ## 2026-10-29: Day 5 Workshop:
+* **Present:** Anji, Eric
+* **Scribe:** Anji
+* **Standup**
+  - Anji & Eric: Nothing to report
+* **Plan**
+  - *Goals for today:*
+  - Anji:  Continue Working on handoff guide, Continue working on Milestone 3
+  - Eric:  Continue Working on handoff guide, Continue improving website and add content for better viewing experience
+* **Build**
+  - Got half of the handoff guide done
+  - Content written in google doc, ready to be populated on webpage
+* **Review**
+  - Progress is being made, no substantial reviews needed just yet.
+
+
+

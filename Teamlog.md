@@ -63,11 +63,11 @@
   - Anji & Eric: Nothing to report
 * **Plan**
   - *Goals for today:*
-  - Anji:  Continue Working on handoff guide, Continue working on Milestone 3
-  - Eric:  Continue Working on handoff guide, Continue improving website and add content for better viewing experience
+  - Anji:  Continue Working on Api contract, Continue working on Milestone 3
+  - Eric:  Continue Working on their handoff section, Finish summary and Bug Fixing, Continue improving website and add content for better viewing experience
 * **Build**
-  - Got half of the handoff guide done
-  - Content written in google doc, ready to be populated on webpage
+  - Handoff guide almost done
+  - Api Contract in its finishing Stages 
 * **Review**
   - Progress is being made, no substantial reviews needed just yet.
 

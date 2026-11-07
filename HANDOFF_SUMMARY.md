@@ -1,82 +1,89 @@
-Blue Alliance Robotics History
 Project Handoff Summary
 
-Project: Blue Alliance Robotics History  
-Application Name: Community Archives  
-Repository: https://github.com/risecelestial/blue-alliance-robotics-history  
-Original Developers: Rohanji Novas and Eric Edwards  
-Project Type: FIRST Robotics Competition historical information website
+Project: Blue Alliance Robotics History
+Repository: https://github.com/risecelestial/blue-alliance-robotics-history
+Original Developers: Rohanji Novas and Eric Edwards
 
- 1. Application Overview
+1. What the Application Does
 
-Blue Alliance Robotics History is a website designed to explore the history of FIRST Robotics Competition (FRC) teams and their contributions to robotics competitions. The application is presented under the name Community Archives.
+Blue Alliance Robotics History is a website about the history of FIRST Robotics Competition (FRC) teams and their involvement in robotics competitions.
+The goal is to organize information about robotics teams, historical events, competition participation, and achievements.
+The original website has a historical timeline and an Original and Sustaining Teams section. Visitors can browse team information using navigation buttons and an image carousel.
+The project was originally built with HTML, CSS, and JavaScript. It was later expanded into a full-stack application using React and Express.
 
-The main purpose is to organize historical information about robotics teams, their locations, competition participation, achievements, and important events in FIRST Robotics history.
+2. What Is Already Built
 
-The original interface contains two main sections: a historical timeline and an Original and Sustaining Teams section. The timeline is designed to display historical events in chronological order. The team section allows visitors to browse team information using navigation controls and an image carousel.
+The original website includes a header with the FIRST Robotics logo and navigation, a historical timeline, timeline events generated with JavaScript, an Original and Sustaining Teams section, previous and next team buttons, an image carousel, automatic carousel advancement, team information displayed dynamically, responsive styling for different screen sizes, and a footer with project information and links.
+The React application adds a team management system.
+It allows users to view all robotics teams, view information about one team, add a new team, edit an existing team, delete a team, navigate between different pages, and retrieve information from the Express backend.
+The React application also uses asynchronous requests to communicate with the backend. It displays loading and error messages when needed.
 
-2. Current Application Features
+3. Technologies Used
 
-The existing application includes:
+Original Website:
 
-- A stationary header with the FIRST Robotics logo and website navigation.
-- A timeline interface with dynamically generated event cards.
-- Timeline visibility effects that respond to scrolling.
-- An Original and Sustaining Teams section.
-- Previous and next team navigation.
-- An image carousel with previous and next controls.
-- Automatic image carousel advancement when multiple images are available.
-- Team information displayed dynamically using JavaScript.
-- A responsive layout designed for different screen sizes.
-- A footer containing project credits, contact information, and external resources.
+HTML, CSS, and JavaScript.
 
-3. Technology and Architecture
+Full-Stack Application:
 
-The original application was developed using:
+React, Vite, React Router, Node.js, Express, Fetch API, Vitest, and Supertest.
+Git and GitHub are used to manage the project, and GitHub Actions is used for automated checks.
 
-- HTML for page structure.
-- CSS for layout, styling, and responsive design.
-- JavaScript for dynamic content, navigation, and interactive behavior.
-- GitHub for source-code management.
-- GitHub Pages for publishing the original website.
+4. How the Application Is Organized
 
-The original application uses a single-page structure. JavaScript dynamically creates timeline cards and updates the displayed team information without requiring a page reload.
+The repository contains the original website and the newer full-stack application.
+The main original website files are index.html, style.css, script.js, and first_logo.png.
+The frontend folder contains the React application, including its pages, components, and Vite configuration.
+The backend folder contains the Express application.
+
+Important backend files include server.js, which starts the server; app.js, which sets up Express; routes/teams.js, which contains the team API routes; controllers/teamController.js, which handles the team operations; data/teams.js, which contains the initial team data; and the tests folder, which contains the automated tests.
+The main documentation files are README.md, API_CONTRACT.md, HANDOFF_SUMMARY.md, KNOWN_ISSUES.md, and DEBUGGING_ANALYSIS.md.
+
+5. Current Backend Functionality
+
+The backend supports all four CRUD operations.
+Create allows users to add a new team. Read allows users to retrieve all teams or one team. Update allows users to edit an existing team. Delete allows users to remove a team.
+
+The API has five routes:
+
+GET /api/teams
+GET /api/teams/:id
+POST /api/teams
+PUT /api/teams/:id
+DELETE /api/teams/:id
+
+The backend returns appropriate HTTP status codes and JSON error messages.
+The team data is currently stored in an in-memory JavaScript array. It is not connected to a permanent database.
+
+6. How to Run the Application
+
+Node.js and npm are needed to run the full-stack application.
+The backend is located in the backend folder. Check its package.json file for the commands to install dependencies and start the server. The backend runs at http://localhost:3000.
+The frontend is located in the frontend folder. Check its package.json file for the commands to install dependencies and start the development server. The frontend usually runs at http://localhost:5173.
+Both servers must stay running while using the React application.
+To run the backend tests, go to the backend folder and check its package.json file for the test command.
+More information is available in README.md.
+
+7. Current Project Status
+
+The original website has been developed and tested. The React frontend and Express backend have also been implemented.
+The main features of the full-stack application are working, including the team pages, API communication, CRUD operations, and automated backend tests.
+The repository also includes documentation explaining how the application works and how another developer can run it.
+However, there are still some things that can be improved. The team records are currently sample information, and the historical timeline needs more research. The backend also uses temporary in-memory storage instead of a permanent database.
+
+8. Known Issues and Future Improvements
+
+Some areas that still need work include adding more verified historical events, researching and adding accurate robotics team information, adding more team photographs, improving the search and filtering features, adding permanent database storage, adding user login and authentication, and connecting the original website and React application more closely.
+These limitations are explained in more detail in KNOWN_ISSUES.md.
+
+9. What the Next Developer Should Do
+
+The next developer should first look through the project and understand how the original website and full-stack application are organized.
+The next developer should read the README and API contract, clone the repository and get both servers running, run the existing backend tests, and check that the original website still works.
+After that, they can research real FIRST Robotics Competition teams and historical events, replace sample information with verified information, add real team pictures, consider adding a permanent database, improve the search and filtering features, and add more tests when new features are created.
 
 
-4. Current Project Status
+10. Final Handoff Notes
 
-The original website has been developed and tested.
-
-The repository also contains an API contract describing the planned robotics team resource and its CRUD operations.
-
-### 5. Important Files
-
-- index.html: Main page structure.
-- style.css: Application styling and responsive layout.
-- script.js: Timeline, team data, navigation, and carousel functionality.
-- first_logo.png: FIRST Robotics logo.
-- README.md: Project introduction and documentation.
-- API_CONTRACT.md: Planned REST API design.
-- Teamlog.md: Team development documentation.
-
-6. Recommended Next Steps
-
-The next developer should:
-
-1. Review the existing HTML, CSS, and JavaScript before making changes.
-2. Preserve the original working website.
-3. Replace placeholder timeline information with researched historical events.
-4. Research real FIRST Robotics teams and add verified information.
-5. Add appropriate team photographs and image paths.
-6. Improve the team directory and historical information.
-7. Implement the React/Vite front end and Express API as required by the full-stack milestone.
-8. Test the application and API after modifications.
-9. Keep documentation updated as features are added.
-
-### 7. Handoff Notes
-
-The original application provides a working foundation for continuing development. The next developer should understand that the current website is an HTML, CSS, and JavaScript application, while the React and Express architecture represents additional work.
-
-Future development should prioritize accurate research, clear documentation, maintainable code, and preserving the existing interface while expanding its capabilities.
-
-End of Handoff Summary
+The next developer should be able to use the existing code and documentation to continue working on the project.
+The biggest areas for future development are adding accurate historical information, improving the team directory, and eventually adding permanent data storage.

@@ -2,7 +2,7 @@ Blue Alliance Robotics History – API Contract
 
 Project: Blue Alliance Robotics History
 Resource: Robotics Teams
-Base URL: http://localhost:3000/api
+
 
 1. Purpose
 

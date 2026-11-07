@@ -3,13 +3,24 @@ Debugging Analysis: React and Express Request-Response Cycle
 
 Request-Response Analysis
 
-For this test, we used the robotics team directory to examine how the React front end communicates with the Express backend. When the teams page loads, React sends an asynchronous GET request to /api/teams using the Fetch API. The request is sent through the Vite development server, which proxies requests beginning with /api to the Express server.
+For this test, we used the robotics team directory to see how the React frontend communicates with the Express backend. When the teams page loads, React sends a GET request to /api/teams using the Fetch API. The request goes through the Vite development server, which forwards it to the Express backend running on port 3000.
 
-The request uses the GET method because the application is retrieving existing information rather than creating or changing a resource. The browser's Network panel can be used to inspect the request headers, including the requested URL and the Accept header. Since this request does not send a JSON body, a Content-Type request header is not required.
+We used the GET method because we wanted to retrieve team information without changing anything. The request does not need a JSON body because we are only asking the server for information. The browser's Network panel allows us to see the request URL, method, and headers.
 
-The Express server receives the request and retrieves the robotics team records from its JSON data source. When successful, it responds with HTTP status 200 OK and a JSON object containing a data array of teams.
+When Express receives the request, it gets the team information from the in-memory JavaScript array in backend/data/teams.js. If everything works correctly, the server sends back a 200 OK response with the team information in JSON format. The response contains a data array with the available teams.
 
-React waits for the response, checks whether the request succeeded, and converts the response body into JavaScript data using response.json(). The component then updates its state with the returned teams. React renders the updated information on the page and removes the loading indicator. If the request fails, the interface displays an error message instead of silently remaining empty.
+React then receives the response and converts the JSON into JavaScript data using response.json(). The team information is saved in the component's state, and React updates the page to display the teams. The loading message also disappears once the information has been received.
 
-This request-response cycle demonstrates how asynchronous communication connects the front end to the backend and allows the interface to display server-provided information.
+If something goes wrong, the frontend can display an error message instead of leaving the user waiting.
+
+This helped us understand how the frontend and backend communicate and how information from the server gets displayed on the website.
+
+Request and Response Information
+
+Request Method: GET
+Request URL: /api/teams
+Expected Status: 200 OK
+Response Type: JSON
+Response Data: A data array containing robotics team information.
+Frontend Result: The teams are displayed on the page and the loading message disappears.
 

@@ -15,12 +15,5 @@ If something goes wrong, the frontend can display an error message instead of le
 
 This helped us understand how the frontend and backend communicate and how information from the server gets displayed on the website.
 
-Request and Response Information
 
-Request Method: GET
-Request URL: /api/teams
-Expected Status: 200 OK
-Response Type: JSON
-Response Data: A data array containing robotics team information.
-Frontend Result: The teams are displayed on the page and the loading message disappears.
 

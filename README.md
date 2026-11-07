@@ -1,100 +1,27 @@
 Blue Alliance Robotics History
 
-Project: FIRST Robotics Competition Exploration
+Project Description: This project explores the history of robotics teams connected to The Blue Alliance and FIRST Robotics Competition (FRC). The website organizes information about robotics teams, important events, competitions, and team history. The original website is called Community Archives and was built using HTML, CSS, and JavaScript. The project has now been expanded into a full-stack application using React, Vite, Node.js, and Express.
 
-Project Description
+Technologies Used: HTML, CSS, and JavaScript are used for the original website. React is used to build the new front end. Vite runs the React development server. Node.js and Express power the back end and REST API. Vitest and Supertest are used to test the API. GitHub is used to store the project and manage changes.
 
-Blue Alliance Robotics History is a website about the history of FIRST Robotics Competition (FRC) teams, competitions, and important events in robotics.
-The goal of this project is to give people a way to learn about robotics teams and their history. The website includes a timeline, team information, navigation, and other interactive features.
-We originally built the website using HTML, CSS, and JavaScript. As the project continued, we also created a React frontend and an Express backend. This allowed us to add more features and learn how the frontend and backend work together.
+Original Project Reflection: We built the Blue Alliance Robotics History website using HTML, CSS, and JavaScript. We separated the page into a header, navigation, main sections, and footer to keep the code organized and make it easier to update. We also considered accessibility by using meaningful HTML elements, descriptive links, and alternative text for images. We used Flexbox to line up items like the FIRST logo, website title, and navigation links. We used Grid to organize the timeline cards into rows and columns. These layouts help keep the website organized on different screen sizes. We also used CSS media queries to adjust the layout for phones and smaller screens. One of our biggest challenges was getting the website on GitHub Pages to look like our original design. At first, the page showed basic text instead of the blue header, timeline cards, and footer we wanted. We had to look through our HTML and CSS to figure out what was wrong. Then we had another issue with Github Pages not loading our content correctly, which we solved by properly nesting html items under proper parent items, and inactive styles being overlayed as the active which just required a more thorough status check. We also had trouble matching the CSS filename in the HTML and finding the right place to change spacing. By checking our code and testing changes in the browser, we learned how small mistakes can affect the whole page. The JavaScript has overall been difficult, with the responsiveness we're going for, there has been a lot more JS development than either of us had planned for, but through a lot of trial and error, we now have a template we can use to add as many items as we want, making theh content pass just about complete. All that's missing is the actual researched content which will be added as we progress through the milestones more. For using this, look over the JS file heavily, the Events and Teams consts are for creating your content, with further sections creating the fading timeline effect, autoplay on the image carousal, and button navigating. Everything has been done in one web page so all it should take is 1 load and you can then enjoy the entire website, and it also means that there is not much need for HTML edits, only CSS edits and JS edits. In case we don't get around to it in a later milestone, the spacing of content while is fine as is, could be improved, same with the amount of timeline cards viewable, maybe consider some edits of both if, again, we don't get to it. This project helped us better understand how HTML, CSS, and JavaScript work together. We also learned that testing the website and fixing problems are important parts of web development.
 
-Technologies Used
+Current Project Status: The original website is still available through GitHub Pages. The repository also contains a React front end and an Express back end. The React application communicates with the Express API to display and manage robotics team information. The API supports creating, reading, updating, and deleting team records. The project also includes automated backend tests.
 
-HTML is used to build the structure of the website.
-CSS is used for the design, colors, layout, and responsive styling.
-JavaScript is used for the interactive features and website content.
-React is used to build the frontend with components.
-Vite is used to run the React application.
-React Router is used to move between pages in the React application.
-Node.js is used to run the backend.
-Express is used to create the REST API.
-Vitest and Supertest are used to test the backend.
-Git and GitHub are used to save our work and manage changes.
-GitHub Actions is used to run automated checks.
-GitHub Pages is used to publish the original website.
+Repository: https://github.com/risecelestial/blue-alliance-robotics-history
 
-Website Features
+Project Structure: The root folder contains the original website files, including index.html, style.css, script.js, and first_logo.png. The frontend folder contains the React application and Vite configuration. The backend folder contains the Express server, API routes, controllers, team data, and tests. The repository also contains documentation files that explain the API, project status, known issues, and debugging process.
 
-The original website includes a historical robotics timeline, an Original and Sustaining Teams section, previous and next navigation buttons, a team image carousel, and automatic image carousel advancement. Team information is displayed with JavaScript. The website also includes responsive styling for different screen sizes, FIRST Robotics branding, and project information.
-The newer React application adds a page showing all robotics teams and a page showing information about one team. Users can create, edit, and delete teams. The application also includes navigation between pages, communication with the Express backend, and loading and error messages when something goes wrong.
+Running the Original Website: To view the original website, open the repository, download or clone the project, and open the root-level index.html file in a browser.
 
-Project Structure
+Running the React Application: Make sure Node.js is installed. Open a terminal in the frontend folder and run npm install. After installation, run npm run dev. Open the local address shown by Vite in your browser.
 
-The repository contains the original website and the newer full-stack application.
-The original website files include index.html, which contains the main website structure; style.css, which contains the website styling; script.js, which handles the timeline, team information, and interactive features; and first_logo.png, which contains the FIRST Robotics logo.
-The frontend folder contains the React application, its components, pages, Vite configuration, and other frontend files.
-The backend folder contains the Express application and its API files. The server.js file starts the backend server. The app.js file sets up Express and middleware. The routes folder contains the API routes. The controllers folder contains the code that handles API operations. The data folder contains the initial team information. The tests folder contains the automated tests.
-The repository also includes documentation files such as README.md, API_CONTRACT.md, HANDOFF_SUMMARY.md, KNOWN_ISSUES.md, DEBUGGING_ANALYSIS.md, and Teamlog.md.
+Running the Express Backend: Open a second terminal in the backend folder and run npm install. After installation, run npm start. The backend runs at http://localhost:3000 and the API is available at http://localhost:3000/api/teams. Keep the backend running while using the React application. Vite is set up to send requests beginning with /api to the Express server.
 
-How to Run the Original Website
+Testing: To run the backend tests, open a terminal in the backend folder and run npm test. The tests use Vitest and Supertest to check the API, including reading, creating, updating, and deleting teams, as well as handling invalid information.
 
-The original website does not need a backend to run. Open the repository's main folder and open index.html in a browser.
-How to Run the React and Express Application
-You need Node.js and npm installed on your computer.
-The frontend and backend run separately. To start the backend, go to the backend folder and check its package.json file for the available commands. The backend runs at http://localhost:3000.
-To start the frontend, go to the frontend folder and check its package.json file for the available commands. The Vite development address is usually http://localhost:5173.
-Both the frontend and backend need to be running to use the full-stack application.
-The API address is http://localhost:3000/api/teams.
+Data Storage and Limitations: The current backend stores team information in an in-memory array. This means new, updated, or deleted information will not stay saved after the server restarts. The project does not currently use a database, user accounts, or authentication. Some robotics team information and historical events are still sample content and need to be researched and checked before being treated as accurate.
 
-How to Run the Tests
+Project Documentation: HANDOFF_SUMMARY.md explains the project and its current status. API_CONTRACT.md explains how the front end communicates with the back end. KNOWN_ISSUES.md explains current problems and unfinished work. DEBUGGING_ANALYSIS.md explains how a request travels from React to Express and back. Teamlog.md contains project development notes. A new developer should read these files before making major changes.
 
-The backend uses Vitest and Supertest. To find the test command, go to the backend folder and check its package.json file.
-The tests check whether the API can get all teams, get one team, create a team, update a team, and delete a team. They also check how the API handles a team that does not exist, missing or invalid information, and duplicate team numbers.
-
-API Information
-
-The backend has five main routes.
-GET /api/teams gets all teams.
-GET /api/teams/:id gets one team.
-POST /api/teams creates a team.
-PUT /api/teams/:id updates a team.
-DELETE /api/teams/:id deletes a team.
-
-More information about the requests and responses can be found in API_CONTRACT.md.
-
-Current Limitations
-
-The backend currently saves team information in an in-memory JavaScript array. This means that changes are temporary. If the backend is restarted, the original sample information comes back.
-We have not added a permanent database or user login system yet.
-Some of the historical information and team records are also examples and still need to be researched and verified. More real team pictures and historical information can be added in the future.
-
-Project Reflection
-
-We built the Blue Alliance Robotics History website using HTML, CSS, and JavaScript. We separated the page into a header, navigation, main sections, and footer to keep the code organized and make it easier to update. We also considered accessibility by using meaningful HTML elements, descriptive links, and alternative text for images.
-
-We used Flexbox to line up items like the FIRST logo, website title, and navigation links. We used Grid to organize the timeline cards into rows and columns. These layouts help keep the website organized on different screen sizes. We also used CSS media queries to adjust the layout for phones and smaller screens.
-
-One of our biggest challenges was getting the website on GitHub Pages to look like our original design. At first, the page showed basic text instead of the blue header, timeline cards, and footer we wanted. We had to look through our HTML and CSS to figure out what was wrong.
-
-Then we had another issue with GitHub Pages not loading our content correctly, which we solved by properly nesting HTML items under their parent elements and checking the active and inactive styles. We also had trouble matching the CSS filename in the HTML and finding the right place to change spacing. By checking our code and testing changes in the browser, we learned how small mistakes can affect the whole page.
-
-JavaScript development was more challenging than we originally expected. Through trial and error, we developed a template that allows us to add timeline events and team information without constantly changing the HTML. The original application uses JavaScript arrays to generate content and manage the interactive features.
-
-As the project developed, we also started learning more about full-stack development. We added React for the frontend and Express for the backend. This helped us understand how a website can request information from a server instead of keeping everything in the frontend. We also learned how to use API routes, fetch requests, and automated tests.
-
-This project helped us understand how different parts of web development work together. We also learned that testing, debugging, and documenting a project are important because someone else might need to work on the same application later.
-
-Additional Documentation
-
-HANDOFF_SUMMARY.md explains what the application does and its current status.
-API_CONTRACT.md explains the backend routes and how the API works.
-KNOWN_ISSUES.md lists problems, limitations, and future improvements.
-DEBUGGING_ANALYSIS.md explains how React communicates with Express.
-Teamlog.md contains project development notes.
-
-Project Credits
-
-Original Project Creators: Rohanji Novas and Eric Edwards.
-FIRST Robotics: https://www.firstinspires.org/
-The Blue Alliance: https://www.thebluealliance.com/
-GitHub Repository: https://github.com/risecelestial/blue-alliance-robotics-history
+Project Credits: Original Project Creators: Rohanji Novas and Eric Edwards. FIRST Robotics: https://www.firstinspires.org/. The Blue Alliance: https://www.thebluealliance.com/.

@@ -1,3 +1,4 @@
+export const initialTeams = [
 {
     id: "1",
     name: "Sample Robotics Team One",
@@ -35,4 +36,4 @@ export function resetTeams() {
 
 export function replaceTeams(newTeams) {
   teams = newTeams;
-}
+} 

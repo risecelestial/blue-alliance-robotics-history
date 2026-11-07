@@ -1,0 +1,19 @@
+{
+  "name": "blue-alliance-robotics-history-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Express REST API for Blue Alliance Robotics History",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "supertest": "^7.1.4",
+    "vitest": "^3.2.4"
+  }
+}

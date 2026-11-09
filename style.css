@@ -166,11 +166,6 @@ main {
     margin: 0 auto;
 }
 
-.timeline-scroll-spacer {
-    height: 50vh;
-    min-height: 200px;
-}
-
 .timeline-line {
     position: absolute;
     top: 8px;
@@ -490,6 +485,40 @@ main {
     text-decoration: underline;
 }
 
+@media (max-width: 700px) {
+    .timeline {
+        width: 100%;
+    }
+
+    .timeline-line {
+        left: 18px;
+    }
+
+    .timeline-event {
+        min-height: 140px;
+        padding-left: 42px;
+    }
+
+    .timeline-event.left,
+    .timeline-event.right {
+        justify-content: flex-start;
+    }
+
+    .timeline-event.left::before,
+    .timeline-event.right::before {
+        left: 18px;
+    }
+
+    .timeline-event.left .event-card {
+        margin-left: 0;
+    }
+
+    .event-card {
+        width: 100%;
+        padding: 16px;
+    }
+}
+
 /* =========================
    SMALL SCREENS
    ========================= */
@@ -522,10 +551,6 @@ main {
 
     main {
        padding: 25px 10px 20px;
-    }
-
-    .timeline {
-        width: 280px;
     }
 
     .team-panel {

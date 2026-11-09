@@ -72,4 +72,21 @@
   - Progress is being made, no substantial reviews needed just yet.
 
 
+  ## 2026-11-5: Day 6 Workshop:
+* **Present:** Anji, Eric
+* **Scribe:** Eric
+* **Standup**
+  - Anji: API Contract will be pushed tomorrow, will need some revising.
+  - Eric: Content added locally, need to do some bug fixing, will update main when ready
+* **Plan**
+  - *Goals for today:*
+  - Anji:  Finish API Contract by Saturday
+  - Eric:  Finalize the submission Sunday
+* **Build**
+  - Handoff guide needs revision
+  - Everything should be in finished / nearly finished states by Tomorrow/Saturday 
+* **Review**
+  - Progress is being made, no substantial reviews needed just yet.
+
+
 

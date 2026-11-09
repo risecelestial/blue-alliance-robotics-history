@@ -4,12 +4,56 @@
 */
 
 const events = [
-    { title: "Content", year: "Event 1", description: "Add the first historical event here." },
-    { title: "Content", year: "Event 2", description: "Add the second historical event here." },
-    { title: "Content", year: "Event 3", description: "Add the third historical event here." },
-    { title: "Content", year: "Event 4", description: "Add the fourth historical event here." },
-    { title: "Content", year: "Event 5", description: "Add the fifth historical event here." },
-    { title: "Content", year: "Event 6", description: "Add the sixth historical event here." }
+  {
+    title: "FIRST Founded by Dean Kamen",
+    year: "1989",
+    description: "Inventor Dean Kamen founds FIRST (For Inspiration and Recognition of Science and Technology) in Manchester, NH, to inspire young people to be science and technology leaders."
+  },
+  {
+    title: "Inaugural FRC Competition: Maize Craze",
+    year: "1992",
+    description: "The first FIRST Robotics Competition takes place in a high school gym in Manchester, NH, featuring 28 teams competing on a field covered in 2,000 lbs of corn kernels. Team 126 (Gael Force) wins the tournament, and Team 191 (X-Cats) receives the first Chairman's Award."
+  },
+  {
+    title: "Rug Rage & White House Visit",
+    year: "1993",
+    description: "The game expands to 'Rug Rage' with 25 competing teams. Champions Team 148 (Robowranglers) are honored by President Bill Clinton at the White House Rose Garden."
+  },
+  {
+    title: "Chairman's Award Standardized",
+    year: "1995",
+    description: "FIRST formalizes the Chairman's Award (now FIRST Impact Award) as the highest honor a team can achieve, recognizing cultural impact rather than match score. Team 151 (Tough Techs) earns the honor."
+  },
+  {
+    title: "Launch of FIRST LEGO League (FLL)",
+    year: "1998",
+    description: "FIRST partners with The LEGO Group to launch FIRST LEGO League, expanding robotics access to elementary and middle school students."
+  },
+  {
+    title: "Championship Moves to Epcot",
+    year: "1999",
+    description: "Due to rapid growth, the FIRST Championship expands to Walt Disney World's Epcot Center in Orlando, Florida, marking a major milestone in national visibility."
+  },
+  {
+    title: "Introduction of FIRST Tech Challenge (FTC)",
+    year: "2005",
+    description: "FIRST introduces a mid-tier program (originally FIRST VEX / FTC) to provide a more accessible, lower-cost robotics platform for high school students."
+  },
+  {
+    title: "Standardization of 3v3 Alliances",
+    year: "2005",
+    description: "FRC transitions match mechanics from 2v2 to the modern 3-team red vs. blue Alliance format, permanently changing match strategy and alliance selection."
+  },
+  {
+    title: "Expansion to the District Model",
+    year: "2009",
+    description: "FIRST pilots the District System (starting in Michigan and later New England), allowing teams to compete in multiple localized events per season rather than single regionals."
+  },
+  {
+    title: "Rebranding to FIRST Impact Award",
+    year: "2022",
+    description: "FIRST rebrands the prestigious Chairman's Award to the FIRST Impact Award to reflect its focus on community transformation, diversity, and long-term outreach."
+  }
 ];
 
 /* TEAM DATA
@@ -18,31 +62,79 @@ const events = [
 */
 
 const teams = [
-    {
-        name: "Example Robotics Team",
-        number: "To be researched",
-        rookieYear: "To be researched",
-        description: "Team history will be added here.",
-        history: "Historical match data: To be researched.",
-        images: []
-    },
-    {
-        name: "Another Robotics Team",
-        number: "To be researched",
-        rookieYear: "To be researched",
-        description: "Competition achievements will be added here.",
-        history: "Historical match data: To be researched.",
-        images: []
-    },
-    {
-        name: "Third Robotics Team",
-        number: "To be researched",
-        rookieYear: "To be researched",
-        description: "Additional team information will be added here.",
-        history: "Historical match data: To be researched.",
-        images: []
-    }
-];
+  {
+    name: "X-Cats",
+    number: "191",
+    rookieYear: "1992",
+    description: "Founded in Rochester, NY, Team 191 was formed through a partnership between Joseph C. Wilson Magnet High School and Xerox Corporation. They are renowned for pioneering student-led engineering outreach and mentoring generations of STEM leaders.",
+    history: "In inaugural 1992 season 'Maize Craze', Team 191 won the very first FIRST Chairman's Award (now FIRST Impact Award). They are members of the FIRST Hall of Fame and have continuously competed in every season since 1992.",
+    images: []
+  },
+  {
+    name: "Gompei and the H.E.R.D.",
+    number: "190",
+    rookieYear: "1992",
+    description: "Based in Worcester, MA, Team 190 represents Worcester Polytechnic Institute (WPI) and Massachusetts Academy of Math and Science. They serve as an open team hosting high school students across central Massachusetts.",
+    history: "Competed as a Finalist in the inaugural 1992 FIRST competition. Won the FIRST World Championship in 1992 (Finalist) and 2000, and inducted into the FIRST Hall of Fame after receiving the Chairman's Award in 2007.",
+    images: []
+  },
+  {
+    name: "The Aztechs",
+    number: "157",
+    rookieYear: "1992",
+    description: "Hailing from Marlborough, MA, Team 157 is based at Assabet Valley Regional Technical High School. The team combines vocational-technical trades with advanced robotics engineering.",
+    history: "A continuous participant since the 1992 inaugural season. Built early landmark machines partnered with Bose Corporation and has consistently anchored the New England District competitive field.",
+    images: []
+  },
+  {
+    name: "Tough Techs",
+    number: "151",
+    rookieYear: "1992",
+    description: "Operating out of Nashua, NH, Team 151 brings together students from Nashua High School South, Nashua High School North, and local community members with support from sponsors like BAE Systems.",
+    history: "Won the prestigious FIRST Chairman's Award in 1995 to earn a place in the FIRST Hall of Fame. Competed in the 1992 inaugural season in New Hampshire and remains an active regional leader.",
+    images: []
+  },
+  {
+    name: "Robowranglers",
+    number: "148",
+    rookieYear: "1992",
+    description: "Based in Greenville, TX, Team 148 represents Greenville High School alongside long-term corporate sponsor E-Systems (now L3Harris) and Innovation First International.",
+    history: "Won the 1993 FIRST World Championship game 'Rug Rage' and was honored at the White House Rose Garden by President Bill Clinton. Captured subsequent World Championships in 2008 and 2018.",
+    images: []
+  },
+  {
+    name: "CHAOS",
+    number: "131",
+    rookieYear: "1992",
+    description: "Operating from Manchester Central High School in Manchester, NH, Team 131 is rooted in the birthplace city of FIRST Robotics.",
+    history: "Awarded 'Best Offensive Round Play of the Day' at the 1992 'Maize Craze' tournament. Sustained continuous operations for over three decades and earned the District FIRST Impact Award in 2024 and 2026.",
+    images: []
+  },
+  {
+    name: "Gael Force",
+    number: "126",
+    rookieYear: "1992",
+    description: "Hailing from Clinton High School in Clinton, MA, Team 126 was established alongside early corporate mentors from Raytheon.",
+    history: "Crowned the inaugural FIRST Robotics Champions in 1992 with their custom-built robot 'NY-alator' navigating the corn-kernel field of 'Maize Craze'.",
+    images: []
+  },
+  {
+    name: "TechnoKats Robotics Team",
+    number: "45",
+    rookieYear: "1992",
+    description: "Based in Kokomo, IN, Team 45 represents Kokomo High School. Mentors from Team 45 played a key role in founding AndyMark, a primary supplier for FIRST hardware.",
+    history: "Finalist in the inaugural 1992 tournament and winner of the Ultimate Keeper Award. Inducted into the FIRST Hall of Fame after winning the Chairman's Award in 1998.",
+    images: []
+  },
+  {
+    name: "The Rocketeers",
+    number: "20",
+    rookieYear: "1992",
+    description: "Located in Clifton Park, NY, Team 20 represents Shenendehowa High School, originally partnered with the IBM Thomas J. Watson Research Center.",
+    history: "Debuted in 1992 with their robot 'IBM' (Incredible Ball Machine). Consistently competed for over 30 years as an active New York regional contender.",
+    images: []
+  }
+].reverse();
 
 /* PAGE ELEMENTS */
 
@@ -96,7 +188,7 @@ events.forEach(function(event, index) {
     timelineEvents.appendChild(row);
 });
 
-/* KEEP THE CURRENT TIMELINE EVENT AND ITS NEIGHBORS VISIBLE */
+/* SHOW ONLY TIMELINE EVENTS THAT FIT IN THE VISIBLE PAGE AREA */
 
 function updateVisibleTimelineEvents() {
     const rows = Array.from(
@@ -107,24 +199,23 @@ function updateVisibleTimelineEvents() {
         return;
     }
 
-    const viewportCenter = window.innerHeight / 2;
-    let currentIndex = 0;
-    let closestDistance = Infinity;
+    const headerBottom = document
+        .querySelector(".top-header")
+        .getBoundingClientRect()
+        .bottom;
+    const footerTop = document
+        .querySelector(".bottom-footer")
+        .getBoundingClientRect()
+        .top;
 
-    rows.forEach(function(row, index) {
-        const bounds = row.getBoundingClientRect();
-        const rowCenter = bounds.top + bounds.height / 2;
-        const distance = Math.abs(rowCenter - viewportCenter);
-
-        if (distance < closestDistance) {
-            closestDistance = distance;
-            currentIndex = index;
-        }
-    });
-
-    rows.forEach(function(row, index) {
-        const isVisible = Math.abs(index - currentIndex) <= 1;
+    rows.forEach(function(row) {
         const card = row.querySelector(".event-card");
+        const bounds = card.getBoundingClientRect();
+        const isVisible =
+            bounds.top >= headerBottom &&
+            bounds.bottom <= footerTop &&
+            bounds.left >= 0 &&
+            bounds.right <= window.innerWidth;
 
         row.classList.toggle(
             "is-visible",

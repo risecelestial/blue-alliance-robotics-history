@@ -24,4 +24,29 @@ Data Storage and Limitations: The current backend stores team information in an 
 
 Project Documentation: HANDOFF_SUMMARY.md explains the project and its current status. API_CONTRACT.md explains how the front end communicates with the back end. KNOWN_ISSUES.md explains current problems and unfinished work. DEBUGGING_ANALYSIS.md explains how a request travels from React to Express and back. Teamlog.md contains project development notes. A new developer should read these files before making major changes.
 
+Getting Started from a Fresh Clone: Install Git and Node.js with npm, then clone the repository and enter its folder:
+
+```sh
+git clone https://github.com/risecelestial/blue-alliance-robotics-history.git
+cd blue-alliance-robotics-history
+```
+
+The original static website can be opened by opening index.html in a browser. To run the React application with its API, open two terminals in the cloned repository. In the first terminal, start the back end:
+
+```sh
+cd backend
+npm install
+npm start
+```
+
+In the second terminal, start the front end:
+
+```sh
+cd frontend
+npm install
+npm run dev
+```
+
+Keep both terminals running. Open the local URL printed by Vite, normally http://localhost:5173. The API should be available at http://localhost:3000/api/teams; if team data does not load, confirm the back-end server is still running. To verify the setup, run `npm test` from the backend folder and `npm run build` from the frontend folder.
+
 Project Credits: Original Project Creators: Rohanji Novas and Eric Edwards. FIRST Robotics: https://www.firstinspires.org/. The Blue Alliance: https://www.thebluealliance.com/.
